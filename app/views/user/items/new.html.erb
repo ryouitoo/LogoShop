@@ -1,0 +1,8 @@
+<h1>新規投稿</h1>
+
+<!--共有テンプレート-->
+<%= render 'form', item: @item %>
+<!--作品一覧に戻す-->
+<%= link_to items_path do %>
+ <button>戻る</button>
+<% end %>

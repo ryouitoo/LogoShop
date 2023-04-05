@@ -1,0 +1,30 @@
+<h1>ロゴ一覧</h1>
+<table>
+
+  <thead>
+    <tr>
+      <th>制作作品</th>
+      <th>Title</th>
+      <th>アカウント名</th>
+    </tr>
+  </thead>
+<% @items.each do |item| %>
+<tbody>
+  <tr>
+  <td>
+    <%= link_to item_path(item.id) do %>
+    <p class="img-wrap"><%=image_tag item.item_image_url,size: "180x130" %></p>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to item_path(item.id) do %>
+    <%= item.item_name %>
+    <% end %>
+  </td>
+  <td>
+    <!--アカウント名-->
+  </td>
+  </tr>
+</tbody>
+<% end %>
+</table>
