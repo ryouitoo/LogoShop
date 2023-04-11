@@ -1,0 +1,11 @@
+<%= form_with model: genre do |f| %>
+
+  <div class="field">
+    <%= f.label :gonre_name, "ジャンル名" %>
+    <%= f.text_field :gonre_name %>
+  </div>
+
+  <div class="submit">
+    <%= f.submit %>
+  </div>
+  <% end %>
