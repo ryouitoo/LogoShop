@@ -23,7 +23,7 @@ scope module: :user do
    # 会員
   get "customers/out" => "customers#out" #顧客の退会確認画面
   patch "customers/withdraw" => "customers#withdraw" #顧客の退会処理(ステータスの更新)
-  get "customers/my_page" => "customers#show"
+  get "customer" => "customers#show"
   get "customers/information/edit" => "customers#edit"
   patch "customers/information" => "customers#update"
 

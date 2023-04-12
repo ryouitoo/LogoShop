@@ -16,7 +16,7 @@ class User::CustomersController < ApplicationController
   	@customer = current_customer
     if @customer.update(customer_params)
       flash[:success] = "個人情報を編集しました"
-      redirect_to  customers_my_page_path
+      redirect_to  customer_path
     else
       flash[:danger] = '個人情報の編集に失敗しました'
       render :edit

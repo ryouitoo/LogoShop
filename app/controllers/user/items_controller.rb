@@ -15,7 +15,6 @@ class User::ItemsController < ApplicationController
       flash[:notice] = "投稿が成功しました"
       redirect_to item_path(@item)
     else
-      flash[:genre_created_error] = "ジャンル名を入力してください"
       render :new
     end
 
