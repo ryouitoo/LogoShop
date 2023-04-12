@@ -10,7 +10,7 @@ class User::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-   # @item.user_id = current_user.id
+    @item.customer_id = current_customer.id
     if @item.save
       flash[:notice] = "投稿が成功しました"
       redirect_to item_path(@item)
