@@ -11,8 +11,8 @@ class User::CustomersController < ApplicationController
   def update
   	#%@customer = current_customer
   	#%@customer.update(customer_params)
-  	#%redirect_to  customers_my_page_path 
-  	
+  	#%redirect_to  customers_my_page_path
+
   	@customer = current_customer
     if @customer.update(customer_params)
       flash[:success] = "個人情報を編集しました"
@@ -32,12 +32,12 @@ class User::CustomersController < ApplicationController
     end
   end
 
- 
-  
-  
-  
+
+
+
+
  private
   def customer_params
-   	params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :post_code, :address, :tel, :is_deleted, :email)
+   	params.require(:customer).permit(:user_name, :account_name, :email,:encrypted_password, :image)
   end
 end
