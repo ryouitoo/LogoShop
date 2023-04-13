@@ -4,28 +4,27 @@
       <h2 style="background-color:#F5F5F5;">Logo一覧</h2>
   </div>
   </div>
-　<div class="row">
-　<% @items.each do |item| %>
+<div class="row">
+<% @items.each do |item| %>
 
     <div class="col-md-4">
         <div class="card bg-light.bg-gradient">
-
-          <%= link_to item_path(item.id) do %>
-　　　　　<div class="card-img-top bd-placeholder-img" >
-　　　　　<%=image_tag item.item_image_url,size: "180x130" %>
+<div class="card-img-top bd-placeholder-img" >
+<%= link_to item_path(item.id) do %>
+<%=image_tag item.item_image_url,width: "100%", height: "164px", style: "object-fit: cover;" %>
+<% end %>
           <div class="card-body">
-
-          <p class="item-title text-center"><%= item.item_name %></p>
+          <%= link_to item_path(item.id) do %>
+          <p class="item-title text-center">作品名: <%= item.item_name %></p>
           <% end %>
-
-          <%= link_to customer_path(item) do %>
-          <p class="item-name text-center"><%= item.customer.account_name %></p>
+          <%= link_to customers_path(item) do %>
+          <p class="item-name text-center">製作者: <%= item.customer.account_name %></p>
           <% end %>
           </div>
         </div>
         </div>
         </div>
-  　　　　<% end %>
+<% end %>
    </div>
 </div>
 

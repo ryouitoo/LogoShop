@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_12_104640) do
+ActiveRecord::Schema.define(version: 2023_04_13_061541) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(version: 2023_04_12_104640) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_favorites_on_customer_id"
+    t.index ["item_id"], name: "index_favorites_on_item_id"
+  end
+
   create_table "genres", force: :cascade do |t|
     t.string "genre_name"
     t.datetime "created_at", precision: 6, null: false
@@ -87,4 +96,6 @@ ActiveRecord::Schema.define(version: 2023_04_12_104640) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favorites", "customers"
+  add_foreign_key "favorites", "items"
 end

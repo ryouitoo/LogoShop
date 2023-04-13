@@ -10,7 +10,8 @@ class Customer < ApplicationRecord
 
   #関係性
   has_many :items, dependent: :destroy
-  
+  has_many :favorites, dependent: :destroy
+
   #バリデーション
   validates :user_name, presence: true
   validates :account_name, presence: true
