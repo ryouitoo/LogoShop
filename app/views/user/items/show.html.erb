@@ -1,12 +1,35 @@
-<div class="container">
+<div class="container" style="background-color:#F5F5F5;">
   <div class="row my-3">
     <div class="col-sm-10 px-sm-0 offset-sm-1">
       <h2 style="background-color:#F5F5F5;">logo 詳細</h2>
   </div>
   </div>
 
-  <div class="row">
+  <div class="row ">
     <div class="col-4">
-      <%=image_tag @item.item_image_url,size: "2000x200" %>
+      <%=image_tag @item.item_image_url,size: "400x400" %>
     </div>
+
+    <table class="table col-4">
+      <tbody>
+        <tr>
+          <th>作品名</th>
+          <td><%= @item.item_name %></td>
+        </tr>
+        <tr>
+          <th>制作コメント</th>
+          <td><%= @item.explanation %></td>
+        </tr>
+        <tr>
+          <th>アカウント</th>
+          <td>
+          <%= link_to customer_path(@customer) do %>
+          <%= @customer.account_name %>
+          <% end %>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
   </div>
