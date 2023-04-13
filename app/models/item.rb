@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 
   #作品画像
-  has_one_attached :item_imag_url
+  has_one_attached :item_image_url
 
   #関係性
   belongs_to :customer

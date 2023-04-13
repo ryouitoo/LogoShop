@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 2023_04_12_104640) do
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
     t.integer "genre_id"
     t.integer "customer_id"
   end
