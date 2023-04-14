@@ -11,6 +11,7 @@ class Customer < ApplicationRecord
   #関係性
   has_many :items, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :item_comments, dependent: :destroy
 
   #バリデーション
   validates :user_name, presence: true

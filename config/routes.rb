@@ -21,6 +21,7 @@ scope module: :user do
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
   resources :items do
    resource :favorites, only: [:create, :destroy]
+   resource :item_comments,only:[:create,:destroy]
   end
 
 

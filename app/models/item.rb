@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :customer
   belongs_to :genre
   has_many :favorites, dependent: :destroy
+  has_many :item_comments, dependent: :destroy
 
   #バリデーション
   validates :item_name, presence: true

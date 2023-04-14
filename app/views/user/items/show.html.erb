@@ -5,23 +5,23 @@
   </div>
   </div>
 
-  <div class="row ">
-    <div class="col-4">
+  <div class="row">
+    <div class="col-8 offset-2">
       <%=image_tag @item.item_image_url,size: "400x400" %>
     </div>
 
     <table class="table col-4">
       <tbody>
         <tr>
-          <th>作品名</th>
+          <td>作品名</td>
           <td><%= @item.item_name %></td>
         </tr>
         <tr>
-          <th>制作コメント</th>
+          <td>制作コメント</td>
           <td><%= @item.explanation %></td>
         </tr>
         <tr>
-          <th>アカウント</th>
+          <td>アカウント</td>
           <td>
           <%= link_to customer_path(@customer) do %>
           <%= @customer.account_name %>
@@ -32,21 +32,57 @@
           <th>いいね</th>
           <td>
             <% if @item.favorited?(current_customer) %>
-            # 一致するレコードが存在する＝すでにいいね済みの場合はdestroyアクションへ
              <%= link_to item_favorites_path(@item.id), method: :delete do %>
              <span style="color:red;">❤︎</span>
              <% end %>
             <% else %>
-             # 一致するレコードが存在しない＝まだいいねしていない場合はcreateアクションへ
             <%= link_to item_favorites_path(@item.id), method: :post do %>
             <span>♡</span>
             <% end %>
             <% end %>
           </td>
         </tr>
-
-
+        <tr>
+          <td>コメント数:<%= @item.item_comments.count %></td>
+          <td>
+          <%= form_with model: [@item, @item_comment] do |f| %>
+          <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+          <%= f.submit "送信する" %>
+          <% end %>
+          </td>
+        </tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="coment_index row">
+    <table class="table">
+      <thead>
+        <tr class="span">アカウント画像</tr>
+        <tr class="span">アカウント名</tr>
+        <tr class="span">コメント内容</tr>
+      </thead>
+      <tbody>
+
+       <% @item.item_comments.each do |item_comment| %>
+       <tr>
+       <td>
+       <%= image_tag item_comment.item.account_imag_url, size:'50x50' %>
+       <%= item_comment.customer.name %>
+       </td>
+       <td>
+       <%= item_comment.comment %>
+       </td>
+       <td>
+       <% if item_comment.customer == current_customer %>
+       <%= link_to "削除", item_item_comment_path(item_comment.book, item_comment), method: :delete, class: "btn btn-sm btn-danger" %>
+       <% end %>
+       </td>
+       </tr>
+       <% end %>
+       </tbody>
+    </table>
+
+    </div>
   </div>
   </div>
