@@ -6,7 +6,9 @@
   <div class="col-xs-10 col-xs-offset-1"style="margin-top: 50px;">
       <h2>登録情報</h2>
   </div>
-    <%= link_to "編集する", customers_information_edit_path, class: "btn btn-success"%>&ensp;
+    <% if @customer == current_customer %>
+    <%= link_to "編集する", edit_customer_path(current_customer), class: "btn btn-success"%>&ensp;
+    <% end %>
         <table class="table table-striped table-hover">
           <thead>
             <tr class="table-head" style="background-color:#F5F5F5;">
@@ -31,4 +33,29 @@
 	</table>
 </div>
 </div>
+ <div class="row my-3">
+   <% @items.each do |item| %>
+   <table class="class">
+     <thead>
+       <tr>
+         <th class="scope">作品</th>
+         <th class="scope">作品名</th>
+       </tr>
+     </thead>
+     <tbody>
+       <th>
+         <td class="scope">
+           <!--イメージ-->
+         </td>
+         <td class="scope">
+           <!--制作者-->
+           <div>
+          <%= link_to item_path(item.id) do %>
+          <p class="item-title text-center">作品名: <%= item.item_name %></p>
+          <% end %>
+          </div>
+         </td>
+       </th>
+     </tbody>
+   </table>
 </div>

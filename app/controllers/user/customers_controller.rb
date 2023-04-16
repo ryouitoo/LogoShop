@@ -1,14 +1,19 @@
 class User::CustomersController < ApplicationController
     before_action :authenticate_customer!
 
-    
+
 
   def show
-    @customer = current_customer
+    @customer = Customer.find_by_id(params[:id])
+  if @customer.nil?
+    redirect_to items_path
+  end
+    @items = @customer.Items.all
   end
 
   def edit
     @customer = current_customer
+
 
   end
 
