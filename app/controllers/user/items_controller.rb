@@ -43,6 +43,9 @@ class User::ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path, notice: '投稿を削除しました。'
   end
 
   private
