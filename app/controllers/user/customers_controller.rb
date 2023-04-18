@@ -8,7 +8,7 @@ class User::CustomersController < ApplicationController
   if @customer.nil?
     redirect_to items_path
   end
-    @items = @customer.Items.all
+    @items = Item.where(customer_id:params[:customer_id])
   end
 
   def edit

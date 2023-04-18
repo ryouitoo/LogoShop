@@ -5,7 +5,8 @@ class Item < ApplicationRecord
 
   #関係性
   belongs_to :customer
-  belongs_to :genre
+  has_many :item_genres, dependent: :destroy
+  has_many :genres, through: :item_genres, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :item_comments, dependent: :destroy
 
