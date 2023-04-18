@@ -1,71 +1,55 @@
-<div class="container m-5">
+<div class="container my-5">
 
   <div class="row my-3">
-    <div class="col-sm-10 px-sm-0 offset-sm-1">
-      <h2 style="background-color:#F5F5F5;">マイページ</h2>
-  <div class="col-xs-10 col-xs-offset-1"style="margin-top: 50px;">
-      <h2>登録情報</h2>
-  </div>
-  <div>
-    <% if @customer == current_customer %>
-    <%= link_to "編集する", edit_customer_path(current_customer), class: "btn btn-success"%>&ensp;
-    <% end %>
-    </div>
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr class="table-head" style="background-color:#F5F5F5;">
-              <th scope="col">アイコン</th>
-              <td><img src=<%= @customer.image %> class = "icon_image"></td>
+    <div class="col-md-10 mx-auto">
+      <h2 class="bg-light p-3">マイページ</h2>
+      <div class="row my-5">
+        <div class="col-md-3">
+          <img src=<%= @customer.image %> class="img-fluid rounded-circle">
+        </div>
+        <div class="col-md-9">
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <th scope="row">氏名</th>
+                <td><%= @customer.user_name %></td>
               </tr>
-
-            <tr class="table-head" style="background-color:#F5F5F5;">
-              <th scope="col">氏名</th>
-              <td><%= @customer.user_name %></td>
-            </tr>
-
-            <tr class="table-head" style="background-color:#F5F5F5;">
-              <th scope="col">アカウント名</th>
-              <td><%= @customer.account_name %></td>
-            </tr>
-            <tr class="table-head" style="background-color:#F5F5F5;">
-              <th scope="col">メールアドレス</th>
-              <td><%= @customer.email %></td>
-            </tr>
-          </thead>
-	</table>
-</div>
-</div>
-
- <div class="row my-3">
-   <div class="col-10 offset-1">
-   <% @items.each do |item| %>
-   <table class="table">
-     <thead>
-       <tr>
-         <th class="scope">作品</th>
-         <th class="scope">作品名</th>
-       </tr>
-     </thead>
-     <tbody>
-       <th>
-         <td class="scope">
-           <!--イメージ-->
-           <%= link_to item_path(item.id) do %>
-          <%=image_tag item.item_image_url,width: "100%", height: "164px", style: "object-fit: cover;" %>
+              <tr>
+                <th scope="row">アカウント名</th>
+                <td><%= @customer.account_name %></td>
+              </tr>
+              <tr>
+                <th scope="row">メールアドレス</th>
+                <td><%= @customer.email %></td>
+              </tr>
+            </tbody>
+          </table>
+          <% if @customer == current_customer %>
+            <%= link_to "編集する", edit_customer_path(current_customer), class: "btn btn-success" %>
           <% end %>
-         </td>
-         <td class="scope">
-           <!--作品名-->
-           <div>
-          <%= link_to item_path(item.id) do %>
-          <p class="item-title text-center">作品名: <%= item.item_name %></p>
-          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-5">
+    <div class="col-md-10 mx-auto">
+      <h2 class="bg-light p-3">作品一覧</h2>
+      <div class="row my-4">
+        <% @items.each do |item| %>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <%= link_to item_path(item.id) do %>
+                <%= image_tag item.item_image_url, class: "card-img-top" %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= item.item_name %></h5>
+              </div>
+            </div>
           </div>
-         </td>
-       </th>
-     </tbody>
-   </table>
-   <% end %>
-   </div>
-</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>

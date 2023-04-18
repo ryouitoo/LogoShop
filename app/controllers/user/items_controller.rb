@@ -23,7 +23,6 @@ class User::ItemsController < ApplicationController
   def show
      @item = Item.find(params[:id])
      @customer = @item.customer
-
      @item_comment = ItemComment.new
   end
 
