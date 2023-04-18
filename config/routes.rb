@@ -26,9 +26,10 @@ scope module: :user do
 
 
    # 会員
+   get 'customers/out' => 'customers#out', as: :customers_out
    resources :customers, only: [:index, :show, :edit, :update, :update]
 
-  get 'customers/out' => 'devise/registrations#cancel', as: :customers_out
+
   delete 'customers' => 'devise/registrations#destroy', as: :customer_destroy
 
 end

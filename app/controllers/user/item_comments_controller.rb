@@ -1,4 +1,4 @@
-class User::ItemComments　createController < ApplicationController
+class User::ItemCommentsController < ApplicationController
 
   def create
     item = Item.find(params[:item_id])

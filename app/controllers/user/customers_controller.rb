@@ -32,7 +32,7 @@ class User::CustomersController < ApplicationController
     end
   end
 
-  def withdraw
+  def out
     @customer = current_customer
     @customer.is_deleted= true
     if @customer.save
