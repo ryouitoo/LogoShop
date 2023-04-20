@@ -25,6 +25,6 @@
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
-##adminログイン用
-*  email: 'test@test.com',
-   password: '000000'
+## adminログイン用
+- email: 'test@test.com',
+- password: '000000'
