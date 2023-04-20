@@ -24,6 +24,7 @@ class User::ItemsController < ApplicationController
      @item = Item.find(params[:id])
      @customer = @item.customer
      @item_comment = ItemComment.new
+     @favorite_count = Favorite.where(item_id: @item.id).count
   end
 
   def edit

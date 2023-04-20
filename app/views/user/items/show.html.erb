@@ -34,7 +34,7 @@
         <td></td>
       </tr>
       <tr>
-        <th>いいね</th>
+        <th>いいね数:<%= @favorite_count %></th>
         <td>
           <% if @item.favorited?(current_customer) %>
            <%= link_to item_favorites_path(@item.id), method: :delete do %>

@@ -1,2 +1,22 @@
-<h1>Logo Shop</h1>
+<div class="container bg-light">
+  <!-- ページヘッダー -->
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1>ようこそロゴショップへ</h1>
+    </div>
+  </div>
 
+  <!-- サイトの説明 -->
+  <div class="row">
+    <% if customer_signed_in? %>
+    <div class="col-sm-12 text-center">
+      <p>自由に投稿や他のユーザーの投稿をチェックしてみてください</p>
+    </div>
+    <% else %>
+    <div class="col-sm-12 text-center">
+      <p>ここでは作成していただいたロゴを自由に登録して頂く事が出来ます。</p>
+      <p>登録したロゴは他のユーザーから評価していただけます</p>
+    </div>
+    <% end %>
+  </div>
+</div>

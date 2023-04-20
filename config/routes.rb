@@ -29,7 +29,7 @@ scope module: :user do
    get 'customers/out' => 'customers#out', as: :customers_out
    resources :customers, only: [:index, :show, :edit, :update, :update]
 
-
+  post '/guests/guest_sign_in', to: 'guests#new_guest'
   delete 'customers' => 'devise/registrations#destroy', as: :customer_destroy
 
 end
@@ -40,6 +40,7 @@ end
    root "homes#top"
    resources :genres, only: [:index, :new, :create, :update, :edit]
    resources :customers, only: [:index, :show, :update, :edit]
+   post '/guests/guest_sign_in', to: 'guests#new_guest'
 
   end
 end

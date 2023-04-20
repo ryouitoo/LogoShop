@@ -1,6 +1,7 @@
  <ul class="offset-1 nav nav-tabs">
     <li class="nav-item col">
-        <%= link_to root_path  do %>ホーム<% end %>
+      <%= link_to 'ゲストログイン（閲覧用）', guests_guest_sign_in_path, method: :post %>
+      <!--%= link_to root_path do %>ホーム<!--% end %-->
     </li>
     <li class="nav-item col">
       <%= link_to items_path do %>商品一覧<% end %>
