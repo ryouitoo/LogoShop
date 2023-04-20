@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+*  email: 'test@test.com',
+   password: '000000'

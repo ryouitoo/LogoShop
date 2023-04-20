@@ -41,6 +41,7 @@ end
    resources :genres, only: [:index, :new, :create, :update, :edit]
    resources :customers, only: [:index, :show, :update, :edit]
    post '/guests/guest_sign_in', to: 'guests#new_guest'
+   resources :items, only: [:index, :show]
 
   end
 end
