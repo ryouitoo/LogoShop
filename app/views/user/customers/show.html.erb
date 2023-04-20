@@ -32,24 +32,26 @@
     </div>
   </div>
 
-  <div class="row my-5">
-    <div class="col-md-10 mx-auto">
-      <h2 class="bg-light p-3">作品一覧</h2>
-      <div class="row my-4">
-        <% @items.each do |item| %>
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-              <%= link_to item_path(item.id) do %>
-                <%= image_tag item.item_image_url, class: "card-img-top" %>
-              <% end %>
-              <div class="card-body">
-                <h5 class="card-title"><%= item.item_name %></h5>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+   <div class="row">
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>作品名</th>
+      <th>画像</th>
+      <th>詳細</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.item_name %></td>
+        <td><%= image_tag item.item_image_url, class: "card-img-top", size: "90x100" %></td>
+        <td><%= link_to "詳細", item_path(item.id), class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
 
 </div>
