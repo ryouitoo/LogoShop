@@ -4,6 +4,18 @@
       <h2 style="background-color:#F5F5F5;">Logo一覧</h2>
   </div>
   </div>
+
+  <!--ジャンル検索機能-->
+  <div class="row my-3">
+    <div class="col-md-12">
+      <h3>ジャンル検索</h3>
+      <%= form_tag(items_path, method: :get) do %>
+        <%= select_tag :genre, options_for_select(Genre.all.map{ |g| [g.genre_name, g.id] }), include_blank: true %>
+        <%= submit_tag "検索" %>
+      <% end %>
+    </div>
+  </div>
+
 <div class="row">
 <% @items.each do |item| %>
 

@@ -1,7 +1,12 @@
 class User::ItemsController < ApplicationController
 
   def index
+    if params[:genre]
+    @items = Item.joins(:genres).where(genres: { id: params[:genre] })
+    else
     @items = Item.all
+    @items = Item.all
+    end
   end
 
   def new
@@ -50,6 +55,6 @@ class User::ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:genre_id, :item_name, :explanation, :item_image_url)#ジャンルid/作品名/説明文/写真
+    params.require(:item).permit(:item_name, :explanation, :item_image_url, {genre_ids: []})#ジャンルid/作品名/説明文/写真
   end
 end

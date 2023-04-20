@@ -19,9 +19,10 @@
     </div>
     <div class="row m-2 p-2">
       <div class="col-md-4 offset-md-4">
-        <%= f.label :ジャンル %>
-        <%= f.collection_select :genre_id, Genre.all, :id, :genre_name, { include_blank: '--選択してください--' }, { class: 'form-control' } %>
-      </div>
+      <%= f.label :ジャンル %>
+      <%= f.collection_select :genre_ids, Genre.all, :id, :genre_name, { include_blank: '--選択してください--' }, { class: 'form-control', multiple: true } %>
+       </div>
+
     </div>
     <div class="row m-2 p-2">
       <div class="col-md-4 offset-md-4">

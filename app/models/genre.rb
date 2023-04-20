@@ -5,5 +5,5 @@ class Genre < ApplicationRecord
    has_many :items, through: :item_genres, dependent: :destroy
 
    #バリデーション
-   validates :gename, presence: true
+   validates :genre_name, presence: true
 end

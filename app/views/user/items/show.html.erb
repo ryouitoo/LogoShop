@@ -31,7 +31,11 @@
       </tr>
       <tr>
         <td>ジャンル</td>
-        <td></td>
+        <% if @item.genres.any? %>
+       <%= @item.genres.pluck(:name).join(', ') %>
+        <% else %>
+          ジャンルがありません。
+        <% end %>
       </tr>
       <tr>
         <th>いいね数:<%= @favorite_count %></th>
