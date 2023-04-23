@@ -5,8 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #アカウント画像
-  has_one_attached :account_imag_url
-  mount_uploader :image, ImageUploader
+  has_one_attached :account_image_url
 
   #関係性
   has_many :items, dependent: :destroy
@@ -17,5 +16,5 @@ class Customer < ApplicationRecord
   validates :user_name, presence: true
   validates :account_name, presence: true
   validates :email, presence: true
-  validates :image, presence: true
+  validates :account_image_url, presence: true
 end

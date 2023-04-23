@@ -47,6 +47,6 @@ class User::CustomersController < ApplicationController
 
  private
   def customer_params
-   	params.require(:customer).permit(:user_name, :account_name, :email,:encrypted_password, :image)
+   	params.require(:customer).permit(:user_name, :account_name, :email,:encrypted_password, :account_image_url)
   end
 end

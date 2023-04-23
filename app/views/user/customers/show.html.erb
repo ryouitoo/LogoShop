@@ -24,7 +24,7 @@
               </tr>
             </tbody>
           </table>
-          <% if @customer == current_customer %>
+          <% if @customer == current_customer && @customer.email != "guest@example.com" %>
             <%= link_to "編集する", edit_customer_path(current_customer), class: "btn btn-success" %>
           <% end %>
         </div>
@@ -46,7 +46,10 @@
       <tr>
         <td><%= item.item_name %></td>
         <td><%= image_tag item.item_image_url, class: "card-img-top", size: "90x100" %></td>
-        <td><%= link_to "詳細", item_path(item.id), class: "btn btn-primary" %></td>
+        <td>
+          <div class='row'>
+          <%= link_to "詳細", item_path(item.id), class: "btn btn-primary" %></td>
+          </div>
       </tr>
     <% end %>
   </tbody>
