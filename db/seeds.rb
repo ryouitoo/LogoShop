@@ -37,12 +37,15 @@ Admin.create!(
 
   Item.create!(
     [
-      {item_name: 'デンジャー', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-aris1.png"), filename:"item-aris1.png"), explanation:"危険な感じをイメージして作成しました。", genre_id: genres[0].id, customer_id: customers[2].id },
-      {item_name: '真', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-aris2.png"), filename:"item-aris2.png"), explanation:"真実についてイメージしました。", genre_id: genres[0].id, customer_id: customers[2].id },
-      {item_name: '不可思議', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-aris3.png"), filename:"item-aris3.png"), explanation:"オリジナルでキャラクターをデザインしました。", genre_id: genres[1].id, customer_id: customers[2].id },
+      {item_name: 'デンジャー', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-aris1.png"), filename:"item-aris1.png"), explanation:"危険な感じをイメージして作成しました。", genre_id: genres[0].id, customer_id: customers[3].id },
+      {item_name: '真', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-aris2.png"), filename:"item-aris2.png"), explanation:"真実についてイメージしました。", genre_id: genres[0].id, customer_id: customers[6].id },
+      {item_name: '不可思議', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-aris3.png"), filename:"item-aris3.png"), explanation:"オリジナルでキャラクターをデザインしました。", genre_id: genres[1].id, customer_id: customers[3].id },
       {item_name: '1ｔ', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-g1.png"), filename:"item-g1.png"), explanation:"酒につぶれる友をイメージして制作制作しました。", genre_id: genres[2].id, customer_id: customers[1].id },
-      {item_name: 'usm', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-g2.png"), filename:"item-g2.png"), explanation:"内山という漢字を崩しロゴ風に制作しました。", genre_id: genres[0].id, customer_id: customers[1].id },
-      {item_name: 'G', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-usm1.png"), filename:"item-usm1.png"), explanation:"オリジナルのキャラクターを友をイメージして制作しました。。", genre_id: genres[1].id, customer_id: customers[0].id }
+      {item_name: 'usm', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-g2.png"), filename:"item-g2.png"), explanation:"内山という漢字を崩しロゴ風に制作しました。", genre_id: genres[4].id, customer_id: customers[1].id },
+      {item_name: 'G', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-usm1.png"), filename:"item-usm1.png"), explanation:"オリジナルのキャラクターを友をイメージして制作しました。", genre_id: genres[1].id, customer_id: customers[0].id },
+      {item_name: '輪廻', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-aris.jpg"), filename:"item-aris.jpg"), explanation:"輪廻転生をイメージし制作しました。", genre_id: genres[6].id, customer_id: customers[2].id },
+      {item_name: '錯覚', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-tetubor.png"), filename:"item-tetubor.png"), explanation:"立体を意識して制作しました。", genre_id: genres[0].id, customer_id: customers[4].id },
+      {item_name: 'アリス', item_image_url: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/item-tetubor1.png"), filename:"item-tetubor1.png"), explanation:"仲間の飼っている犬を意識して制作しました。", genre_id: genres[5].id, customer_id: customers[4].id }
       ]
   )
 
