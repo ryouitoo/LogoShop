@@ -33,7 +33,9 @@
         <td>ジャンル</td>
         <td>
         <% if @item.genres.any? %>
-       <%= @item.genre %>
+       <% @item.genres.each do |genre| %>
+       <%= genre.genre_name %>
+       <% end %>
         <% else %>
           ジャンルがありません。
         <% end %>
