@@ -33,8 +33,7 @@
         <td>ジャンル</td>
         <td>
         <% if @item.genres.any? %>
-
-       <%= @item.genres.pluck(:genre_name).join(', ') %>
+       <%= @item.genre %>
         <% else %>
           ジャンルがありません。
         <% end %>
@@ -90,7 +89,7 @@
           <% @item.item_comments.each do |item_comment| %>
            <tr>
              <td>
-               <%= image_tag item_comment.customer.image.url, size:'50x50' %>
+               <%= image_tag item_comment.customer.account_image_url, size:'50x50' %>
              </td>
              <td>
                <%= item_comment.customer.account_name %>
