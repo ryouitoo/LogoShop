@@ -45,7 +45,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.item_name %></td>
-        <td><%= image_tag item.item_image_url, class: "card-img-top", size: "90x100" %></td>
+        <td><%= image_tag item.item_image_url, class: "card-img-top", size: "90x70" %></td>
         <td>
           <div class='row'>
           <%= link_to "詳細", item_path(item.id), class: "btn btn-primary" %></td>
